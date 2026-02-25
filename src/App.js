@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 function LoginRegister() {
   const [isLogin, setIsLogin] = useState(true);
@@ -73,13 +74,15 @@ function Welcome() {
 
           <div className="navOptions">
             <ul className="optionsList">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Reservations</a></li>
-              <li><a href="#">Menu</a></li>
-              <li><a href="#">Pages</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Shop</a></li>
-              <li><a href="#">Elements</a></li>
+              <ul className="optionsList">
+  <li><Link to="/">Home</Link></li>
+  <li><Link to="/welcome">Reservations</Link></li>
+  <li><Link to="/welcome">Menu</Link></li>
+  <li><Link to="/welcome">Pages</Link></li>
+  <li><Link to="/welcome">Blog</Link></li>
+  <li><Link to="/welcome">Shop</Link></li>
+  <li><Link to="/welcome">Elements</Link></li>
+</ul>
             </ul>
           </div>
           
