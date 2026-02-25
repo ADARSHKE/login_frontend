@@ -21,7 +21,7 @@ function LoginRegister() {
       if (isLogin) {
         alert("Login Successful");
         localStorage.setItem("token", res.data.token);
-        navigate("/welcome"); // 🔥 redirect
+        navigate("/welcome");
       } else {
         alert("Registered Successfully");
       }
@@ -30,40 +30,52 @@ function LoginRegister() {
     }
   };
 
+  // ✅ RETURN MUST BE INSIDE FUNCTION
   return (
-    <div style={{ padding: "50px", textAlign: "center" }}>
-      <h2>{isLogin ? "Login" : "Register"}</h2>
+    <div className="login-container">
+      <div className="box">
+        <h2>{isLogin ? "Login" : "Register"}</h2>
 
-      <input
-        type="email"
-        placeholder="Enter Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br /><br />
+        <div className="input">
+          <input
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label>Email</label>
+          <span className="spin"></span>
+        </div>
 
-      <input
-        type="password"
-        placeholder="Enter Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br /><br />
+        <div className="input">
+          <input
+            type="password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label>Password</label>
+          <span className="spin"></span>
+        </div>
 
-      <button onClick={handleSubmit}>
-        {isLogin ? "Login" : "Register"}
-      </button>
+        <div className="button">
+          <button onClick={handleSubmit}>
+            {isLogin ? "LOGIN" : "REGISTER"}
+          </button>
+        </div>
 
-      <p
-        style={{ cursor: "pointer", color: "blue" }}
-        onClick={() => setIsLogin(!isLogin)}
-      >
-        {isLogin
-          ? "Don't have an account? Register"
-          : "Already have an account? Login"}
-      </p>
+        <p
+          className="toggle-text"
+          onClick={() => setIsLogin(!isLogin)}
+        >
+          {isLogin
+            ? "Don't have an account? Register"
+            : "Already have an account? Login"}
+        </p>
+      </div>
     </div>
   );
 }
-
 function Welcome() {
   return (
     <div className="container">
@@ -98,11 +110,12 @@ function Welcome() {
         </nav>
 
         <div className="mainHead">
-          <h1 className="heading">THAKS FOR REGITER AND LOGIN
-            WELCOME TO OUR 
+          <h1 className="heading" style={{color : "white"}}>THANKS FOR REGISTER AND LOGIN <br />
+            WELCOME TO OUR <br />
             FOOD GALLERY</h1>
           <p className="mainPara">
-            Sed tincidunt pretium ligula nan varius crat
+            Taste Of South <br />
+            Taste Of Home <br />
           </p>
         </div>
       </div>
