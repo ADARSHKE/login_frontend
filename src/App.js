@@ -98,7 +98,9 @@ function Welcome() {
         </nav>
 
         <div className="mainHead">
-          <h1 className="heading">FOOD GALLERY</h1>
+          <h1 className="heading">THAKS FOR REGITER AND LOGIN
+            WELCOME TO OUR 
+            FOOD GALLERY</h1>
           <p className="mainPara">
             Sed tincidunt pretium ligula nan varius crat
           </p>
